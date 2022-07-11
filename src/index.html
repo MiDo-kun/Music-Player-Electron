@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>‎</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="./stylesheets/display.css">
+</head>
+
+<!-- Display all functionalities  -->
+
+<body>
+  <img src="./icons/menu.png" id="menu" width="25" height="25" fill="#fff">
+
+  <img src="./icons/background.jpg" class="background show" width="100%" height="100%">
+  <img src="./images/background.jpg" class="background-music show" width="100%" height="100%">
+
+  <div class="list">
+    <div class="category">
+      <span>Local</span> | <span>Youtube</span>
+      <hr>
+    </div>
+    <!-- Music List here -->
+    <div class="music-list">
+      <div class="center">
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- Music played details -->
+  <div class="bg-icon show">
+    <div id="center">
+      <img src="./images/background.jpg" class="background-music" width="40%" height="40%">
+      <p>Claris</p>
+    </div>
+  </div>
+
+  <!-- Controllers -->
+  <div class="controls show">
+    <div id="slider"></div>
+    <div id="format">
+      <img src="./icons/shuffle.png" alt="">
+      <img src="./icons/previous.png">
+      <img id="pause-play-btn" src="./icons/pause.png">
+      <img src="./icons/next.png">
+      <img src="./icons/repeat.png" alt="" srcset="">
+    </div>
+    <audio id='player' crossorigin>
+      <source src="./music/「往け - LiSA」刀劍神域Progressive 無星夜的詠嘆調 主題曲【中日歌詞】.mp3">
+    </audio>
+  </div>
+
+  <script src="./scripts/display.js"></script>
+  <script src="./scripts/controllers.js"></script>
+</body>
+
+</html>
