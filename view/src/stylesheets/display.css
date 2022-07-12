@@ -26,8 +26,7 @@
 .category hr {
   width: 95%;
   padding: .3px;
-  background-color: #4a4a4a;
-  border-bottom: 1px solid #111111;
+  background-color: rgb(86, 86, 86);
 }
 
 .music-list {

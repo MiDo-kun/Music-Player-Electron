@@ -1,0 +1,36 @@
+.yt {
+  position: absolute; 
+  width: inherit; 
+  height: inherit; 
+  text-align: center;
+}
+
+.yt nav {
+  display: inline-block;
+  border: 1px solid rgb(86, 86, 86);
+  padding: 1px 3px;
+  margin-bottom: 10px;
+}
+
+.yt input {
+  width: 13rem;
+  outline: 0;
+  font-size: .8rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.yt button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-left: 1px solid rgb(86, 86, 86);
+}
+.yt #icons {
+  margin-top: .3rem;
+  width: .8rem;
+}
+
+.yt iframe {
+  background-color: white; 
+  color: "black";
+}

@@ -1,8 +1,16 @@
+const Innertube = require('youtubei.js');
+const express = require('express');
+const http = require('http');
 const fs = require('fs');
 
-// Get local files
-app.get('/directory', async function(req, res, next) {
-   const dir = await fs.readdirSync('./public/music');
-   res.json(dir);
-   next();
-});
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended : false}));
+
+http.createServer(app).listen(3000, 'localhost')
+.then(() => {
+  console.log('Running at http://localhost:3000');
+})
+.catch((err) => {
+  console.log(err);
+})

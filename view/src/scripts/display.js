@@ -6,23 +6,29 @@ const controls = document.querySelector('.controls');
 const bgIcon = document.querySelector('.bg-icon')
 let change = true;
 
+  list.style.bottom = '0%'
+  list.style.transition = 'all 2s';
+  bgImg.style.opacity = 0;
+  controls.style.opacity = 0;
+  bgIcon.style.opacity = 0;
+  
 // Display all controls when mouse enters the display area
-document.body.addEventListener('mouseover', () => {
-  if (change) {
-    bgImg.style.opacity = 0;
-    controls.style.opacity = 1;
-    bgIcon.style.opacity = 1;
-  }
-})
+// document.body.addEventListener('mouseover', () => {
+//   if (change) {
+//     bgImg.style.opacity = 0;
+//     controls.style.opacity = 1;
+//     bgIcon.style.opacity = 1;
+//   }
+// })
 
-// Hide all controls when mouse leaves the display area
-document.body.addEventListener('mouseleave', () => {
-  if (change) {
-    bgImg.style.opacity = 1;
-    controls.style.opacity = 0;
-    bgIcon.style.opacity = 0;
-  }
-})
+// // Hide all controls when mouse leaves the display area
+// document.body.addEventListener('mouseleave', () => {
+//   if (change) {
+//     bgImg.style.opacity = 1;
+//     controls.style.opacity = 0;
+//     bgIcon.style.opacity = 0;
+//   }
+// })
 
 // Display and close playlist
 menu.addEventListener('click', (e) => {

@@ -1,0 +1,15 @@
+- Local
+  - Music
+  - Picture
+    - Set download file location
+    - Store information location on local storage.
+      - location
+      - JSON
+- Online
+  - Search
+  - Download
+  - Show results
+  - Title 
+  - Time Range
+  - Play music temporarily
+    - in the near future

@@ -1,0 +1,65 @@
+*,
+::before,
+::after {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+} 
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+body {
+  color: white;
+  min-width: 100%;
+  background: transparent;
+}
+
+.center {
+  overflow: auto;
+  width: inherit;
+}
+
+li {
+  display: flex;
+  font-size: .8rem;
+  padding: .3rem;
+  margin-right: .5rem;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid rgb(86, 86, 86);
+}
+
+li > img {
+  width: 22%;
+  height: 8%;
+}
+li > #details {
+  margin-left: .5rem;
+}
+
+span > #title {
+  margin-top: .5rem;
+  width : 18rem;
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+span > #options {
+  font-size: .6rem;
+}

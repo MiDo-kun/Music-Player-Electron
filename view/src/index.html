@@ -7,6 +7,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="./stylesheets/display.css">
+  <link rel="stylesheet" href="./stylesheets/yt-search.css">
 </head>
 
 <!-- Display all functionalities  -->
@@ -14,8 +15,8 @@
 <body>
   <img src="./icons/menu.png" id="menu" width="25" height="25" fill="#fff">
 
-  <img src="./icons/background.jpg" class="background show" width="100%" height="100%">
-  <img src="./images/background.jpg" class="background-music show" width="100%" height="100%">
+  <!-- <img src="./icons/background.jpg" class="background show" width="100%" height="100%">
+  <img src="./images/background.jpg" class="background-music show" width="100%" height="100%" style="display: none;"> -->
 
   <div class="list">
     <div class="category">
@@ -25,20 +26,33 @@
     <!-- Music List here -->
     <div class="music-list">
       <div class="center">
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
-        <li>Lorem, ipsum dolor.</li>
+        <!-- local storage here -->
+        <div class="local" style="display: none;">
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+          <li>Lorem, ipsum dolor.</li>
+        </div>
+
+        <!-- Youtube List and Search -->
+        <div class="yt">
+          <nav>
+            <input type="text" name="" id="yt_input" placeholder="Search">
+            <button type="submit" id="yt_search"><img src="./icons/search.png" id="icons"></button>
+          </nav>
+          <iframe src="http://localhost:3000/query.html" allowtransparency="true" height="170" width="100%"></iframe>
+        </div>
+
       </div>
     </div>
   </div>
@@ -68,6 +82,8 @@
 
   <script src="./scripts/display.js"></script>
   <script src="./scripts/controllers.js"></script>
+  <script src="./scripts/local.js"></script>
+  <script src="./scripts/youtube.js"></script>
 </body>
 
 </html>
