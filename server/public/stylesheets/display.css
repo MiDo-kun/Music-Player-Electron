@@ -35,7 +35,7 @@
   justify-content: center;
 }
 
-.music-list .center {
+.music-list > .center {
   overflow: hidden;
   margin-top: 1.3rem;
   width: 75%;
@@ -125,8 +125,8 @@ span > #options {
   margin: 1.3rem  2rem;
 }
 
-#local:hover,
-#yt:hover,
+#local_list:hover,
+#yt_list:hover,
 #format img:hover {
   opacity: 0.6;
 }

@@ -3,7 +3,7 @@ const img = document.querySelector('.background');
 const bgImg = document.querySelector('.background-music');
 const list = document.querySelector('.list');
 const controls = document.querySelector('.controls');
-const bgIcon = document.querySelector('.bg-icon')
+const bgIcon = document.querySelector('.bg-icon');
 let change = true;
 
   // list.style.bottom = '0%'
@@ -54,8 +54,8 @@ menu.addEventListener('click', (e) => {
 })
 
 
-const localBtn = document.querySelector('#local');
-const ytBtn = document.querySelector('#yt');
+const localBtn = document.querySelector('#local_list');
+const ytBtn = document.querySelector('#yt_list');
 const localList = document.querySelector('.local');
 const ytList = document.querySelector('.yt');
 

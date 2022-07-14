@@ -25,16 +25,50 @@
 body {
   color: white;
   min-width: 100%;
-  background: transparent;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.yt {
+  width: 100%; 
+  height: inherit; 
+  text-align: center;
+}
+
+.yt nav {
+  display: inline-block;
+  border: 1px solid rgb(86, 86, 86);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.yt input {
+  width: 13rem;
+  margin: 0px 5px;
+  outline: 0;
+  font-size: .8rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.yt button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-left: 1px solid rgb(86, 86, 86);
+}
+.yt #icons {
+  margin-top: .3rem;
+  width: .8rem;
 }
 
 .center {
+  max-height: 180px;
   overflow: auto;
-  width: inherit;
 }
 
 li {
   display: flex;
+  text-align: left;
   font-size: .8rem;
   padding: .3rem;
   margin-right: .5rem;
@@ -61,5 +95,11 @@ span > #title {
 }
 
 span > #options {
-  font-size: .6rem;
+  text-align: left;
+}
+
+#yt_search:hover,
+.results li #save:hover,
+.results li #play:hover{
+  opacity: 0.6;
 }
