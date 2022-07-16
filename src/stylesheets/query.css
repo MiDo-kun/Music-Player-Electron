@@ -1,0 +1,68 @@
+.yt {
+  width: 100%; 
+  height: inherit; 
+  text-align: center;
+}
+
+.yt nav {
+  display: inline-block;
+  border: 1px solid rgb(86, 86, 86);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.yt input {
+  width: 13rem;
+  margin: 0px 5px;
+  outline: 0;
+  font-size: .8rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.yt button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-left: 1px solid rgb(86, 86, 86);
+}
+.yt #icons {
+  margin-top: .3rem;
+  width: .8rem;
+}
+
+.center {
+  max-height: 180px;
+  overflow: auto;
+}
+
+li {
+  display: flex;
+  text-align: left;
+  font-size: .8rem;
+  padding: .3rem;
+  margin-right: .5rem;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid rgb(86, 86, 86);
+}
+
+li > img {
+  width: 22%;
+  height: 8%;
+}
+li > #details {
+  margin-left: .5rem;
+}
+
+span > #title {
+  margin-top: .5rem;
+  width : 18rem;
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+span > #options {
+  font-size: .6rem;
+}

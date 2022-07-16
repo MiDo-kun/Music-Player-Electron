@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>‎</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel="stylesheet" href="./stylesheets/index.css">
+  <link rel="stylesheet" href="./stylesheets/display.css">
+  <link rel="stylesheet" href="./stylesheets/controllers.css">
+  <link rel="stylesheet" href="./stylesheets/query.css">
+</head>
+
+<!-- Display all functionalities  -->
+
+<body>
+  <img src="./icons/menu.png" id="menu" width="25" height="25" fill="#fff">
+
+  <img src="./icons/background.jpg" class="background show" width="100%" height="100%">
+  <img class="background-music show" width="100%" height="100%">
+
+  <div class="list">
+    <div class="category">
+      <span id='local_list'>Local</span> | <span id='yt_list'>Youtube</span>
+      <hr>
+    </div>
+    <!-- Music List here -->
+    <div class="music-list">
+      <div class="center">
+        <!-- local storage here -->
+        <div class="local">
+          <div class="center" style="max-height: 220px;">
+            <div class="results">
+            </div>
+          </div>
+        </div>
+        <!-- youtube search here -->
+        <div class="yt">
+          <nav>
+            <input type="text" name="" id="yt_input" placeholder="Search">
+            <button type="submit" id="yt_search"><img src="./icons/search.png" id="icons"></button>
+          </nav>
+          <div class="center">
+            <div class="youtube_results">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Music played details -->
+  <div class="bg-icon show">
+    <div id="center">
+      <img class="background-music" width="50%" height="40%">
+      <marquee width="60%" direction="left" id="music_title"> </marquee>
+    </div>
+  </div>
+
+  <!-- Controllers -->
+  <div class="controls show">
+    <div id="slider"></div>
+    <div id="format">
+      <img id="volume-btn" src="./icons/unmute.png" alt="volume">
+      <img id="shuffle-btn" src="./icons/shuffle.png" alt="">
+      <img id="previous-btn" src="./icons/previous.png">
+      <img id="pause-play-btn" src="./icons/pause.png">
+      <img id="next-btn" src="./icons/next.png">
+      <img id="repeat-btn" src="./icons/repeat.png" alt="" srcset="">
+      <img src="./icons/menu.png" alt="menu">
+    </div>
+    <audio id='player' crossorigin></audio>
+  </div>
+
+  <script>
+    // Parse localStorage into JSON
+    let localStorageList = [];
+    function parseLocalStorage() {
+      if (localStorage.getItem('songs') == false)
+        localStorage.setItem('songs', '[]');
+      else {
+        const localstorage = localStorage.getItem('songs');
+        localStorageList = JSON.parse(localstorage).reverse();
+      }
+    }
+  </script>
+
+  <script src="./scripts/querySelectors.js"></script>
+  <script src="./scripts/display.js"></script>
+  <script src="./scripts/controllers.js"></script>
+  <script src="./scripts/youtube.js"></script>
+  <script src="./scripts/local.js"></script>
+</body>
+
+</html>
