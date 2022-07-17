@@ -1,11 +1,15 @@
 yt_search.addEventListener('click', () => {
   const yt_input = document.querySelector('#yt_input').value;
-  queryRequest(yt_input);  
+  emptyGIF.style.display = 'none';
+
+  queryRequest(yt_input);
 })
 
 async function queryRequest(query) {
-  if (query.trim() == '')
+  if (query.trim() == '') {
     query = ' ';
+    emptyGIF.style.display = 'block';
+  }
 
   const options = {
     method: 'POST',
@@ -17,14 +21,20 @@ async function queryRequest(query) {
   
   const response = await fetch('/query',  options);
   const json = await response.json();
-  const results = await json.videos;
 
+  if (json.error == 'Error Occured!') {
+    errorModal.style.opacity = 1;
+    return;
+  }
+
+  const results = await json.search.videos;
   let list = ''
   for (let i = 0; i < 10; i++) {
     const videoID = results[i].id;
     const title = results[i].title;
     const thumbnail = results[i].metadata.thumbnails[0].url;
     const duration = results[i].metadata.duration.simple_text;
+
     list += 
     `<li>
       <img src='${thumbnail}'></img>
@@ -44,8 +54,8 @@ async function queryRequest(query) {
   resultDocument.innerHTML = list;
 }
 
+// Download the videoID into specific file
 async function save(song, duration) {
-  // Download the music into specific file
   const options = {
     method: 'POST',
     headers: {
@@ -55,8 +65,14 @@ async function save(song, duration) {
   }
   
   // Save it by using an id to get the thumbnail and title
-  const req = await fetch('/download', options);
+  const req = await fetch('/download', options)
   const json = await req.json();
+
+  if (json.error == 'Error Occured!') {
+    errorModal.style.opacity = 1;
+    return;
+  }
+
   const thumbnail = `https://img.youtube.com/vi/${song}/maxresdefault.jpg`
   const title = json.title;
 
@@ -71,6 +87,9 @@ async function save(song, duration) {
 }
 
 async function play(videoID) {
+  clearInterval(progress);
+  setInterval(progress, 500);
+  
   // Search for the song based on the videoID
   const options = {
     method: 'POST',
@@ -81,22 +100,32 @@ async function play(videoID) {
   }
   const req = await fetch('/download', options);
   const res = await req.json();
-  
+ 
+  if (res.error == 'Error Occured!') {
+    errorModal.style.opacity = 1;
+    return;
+  }
+
   const ytIcon = document.querySelector('.bg-icon img');
-  audio.src = `http://localhost:3000/play/${videoID}`;
-  bgImg.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
-  ytIcon.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+  const bgLink = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+  
+  img.style.filter = 'brightness(0.5)';
+  audio.src = `http://localhost:8887/play/${videoID}`;
+  img.src = bgLink;
+  bgImg.src = bgLink;
+  ytIcon.src = bgLink;
   bgTitle.textContent = res.title;
+  closeBtn.style.pointerEvents = 'auto';
 
   audio.load();
   audio.play();
   pausePlayBtn.src = './icons/play.png';
 
   // Show background image
-  menu.src = './icons/menu.png';
   list.style.bottom = '-100%'
   list.style.transition = 'all 2s';
-  change = true;
+  closeBtn.style.display = 'none';
+  closeMenu = true;
   controls.style.opacity = 1;
   controls.style.zIndex = 1;
   bgIcon.style.opacity = 1;

@@ -26,6 +26,11 @@ function loadLocal() {
 }
 
 function playLocal(songID) {
+  clearInterval(progress);
+  setInterval(progress, 500);
+  
+  closeBtn.style.pointerEvents = 'auto';
+
   const searchSong = songID;
   localStorageList.forEach((song) => {
     if (song.id == searchSong) {
@@ -35,7 +40,6 @@ function playLocal(songID) {
       bgImg.src = song.thumbnail;
       ytIcon.src = song.thumbnail;
       bgTitle.textContent = song.title;
-      ontent = song.title;
 
       audio.load();
       audio.play();
@@ -44,9 +48,9 @@ function playLocal(songID) {
   })
   
   // Show background image
-  menu.src = './icons/menu.png';
   list.style.bottom = '-100%'
   list.style.transition = 'all 2s';
+  closeBtn.style.display = 'none';
   closeMenu = true;
   controls.style.opacity = 1;
   controls.style.zIndex = 1;

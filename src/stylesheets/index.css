@@ -1,10 +1,21 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../font/Poppins.ttf");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../font/Rubik.ttf");
+}
+
+
 *,
 ::before,
 ::after {
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   cursor: pointer;
 }
 

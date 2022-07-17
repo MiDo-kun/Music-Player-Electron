@@ -1,7 +1,31 @@
-// Set volume of the audio
-audio.volume = 0.4;
+// Get current time
+function getCurrentTime() {
+  audio.currentTime = audio.duration * (slider.value / 100);
+}
 
-// 
+// Update progress bar
+const progress = () =>  {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  slider.value = progress;
+}
+
+// Set volume
+function setVolume() {
+  audio.volume = volumeValue.value / 100;
+}
+
+// Show or remove slider
+volumeBtn.addEventListener('click', () => {
+  if (showVolume == false) {
+    showVolume = true;
+    volumeValue.style.opacity = '1';
+  } else {
+    showVolume = false;
+    volumeValue.style.opacity = '0';
+  }
+})
+
+// Auto-play current status of the player
 audio.addEventListener('ended', () => {
   if (repeat)
       audio.setAttribute('loop', '');
@@ -42,6 +66,9 @@ function nextTrack() {
     return;
   }
 
+  clearInterval(progress);
+  setInterval(progress, 500);
+
   localStorageList.forEach((song, index) => {
     if (song.id == currentId && index < localStorageList.length - 1) {
       audio.src = "./music/" +  localStorageList[index + 1].id + ".mp3";
@@ -66,7 +93,9 @@ function nextTrack() {
 
 // Previous track
 previousBtn.addEventListener('click', () => {
-  
+  clearInterval(progress);
+  setInterval(progress, 500);
+
   if (randomShuffle) {
     shuffle();
     return;
@@ -104,9 +133,13 @@ previousBtn.addEventListener('click', () => {
 
 // Repeat track
 repeatBtn.addEventListener('click', () => {
+  clearInterval(progress);
+  setInterval(progress, 500);
+  
   if (repeat == false) {
     repeat = true;
     randomShuffle = false;
+    audio.setAttribute('loop', '');
     repeatBtn.src = './icons/repeat-active.png';
     shuffleBtn.src = './icons/shuffle.png';
   } else {
@@ -116,7 +149,11 @@ repeatBtn.addEventListener('click', () => {
   }
 });
 
+// Shuffle track
 shuffleBtn.addEventListener('click', () => {
+  clearInterval(progress);
+  setInterval(progress, 500);
+
   if (randomShuffle == false) {
     randomShuffle = true;
     repeat = false;
@@ -131,6 +168,9 @@ shuffleBtn.addEventListener('click', () => {
 })
 
 function shuffle() {  
+  clearInterval(progress);
+  setInterval(progress, 500);
+  
   const randomIndex = Math.floor(Math.random() * localStorageList.length);
   audio.src = "./music/" +  localStorageList[randomIndex].id + ".mp3";
   audio.play();

@@ -12,9 +12,8 @@
 </head>
 
 <!-- Display all functionalities  -->
-
 <body>
-  <img src="./icons/menu.png" id="menu" width="25" height="25" fill="#fff">
+  <img id="close" fill="#fff">
 
   <img src="./icons/background.jpg" class="background show" width="100%" height="100%">
   <img class="background-music show" width="100%" height="100%">
@@ -23,6 +22,13 @@
     <div class="category">
       <span id='local_list'>Local</span> | <span id='yt_list'>Youtube</span>
       <hr>
+    </div>
+    <!-- Error handling here -->
+    <div class="error-modal">
+      <div class="error-container">
+        <img id="err-close-modal" src="./icons/close-black.png" alt="" width="13" height="13">
+        <div id="error-message">No internet connection!</div>
+      </div>
     </div>
     <!-- Music List here -->
     <div class="music-list">
@@ -38,9 +44,15 @@
         <div class="yt">
           <nav>
             <input type="text" name="" id="yt_input" placeholder="Search">
-            <button type="submit" id="yt_search"><img src="./icons/search.png" id="icons"></button>
+            <button type="submit" id="yt_search">
+              <img src="./icons/search.png" id="icons">
+            </button>
           </nav>
           <div class="center">
+            <div class="empty-list">
+              <img src="./icons/no_search.gif" alt="" width="80" height="70">
+              <p>List is empty...</p>
+            </div>
             <div class="youtube_results">
             </div>
           </div>
@@ -52,14 +64,17 @@
   <!-- Music played details -->
   <div class="bg-icon show">
     <div id="center">
-      <img class="background-music" width="50%" height="40%">
-      <marquee width="60%" direction="left" id="music_title"> </marquee>
+      <img class="background-music">
+      <div>
+        <p width="60%" direction="left" id="music_title"> </p>
+      </div>
     </div>
   </div>
 
   <!-- Controllers -->
   <div class="controls show">
-    <div id="slider"></div>
+    <input type="range" name="" id="slider" min="1" max="100" value="0" onchange="getCurrentTime()">
+    <input type="range" min="1" max="100" value="99" id="vol_val" onchange="setVolume()">
     <div id="format">
       <img id="volume-btn" src="./icons/unmute.png" alt="volume">
       <img id="shuffle-btn" src="./icons/shuffle.png" alt="">
@@ -67,7 +82,7 @@
       <img id="pause-play-btn" src="./icons/pause.png">
       <img id="next-btn" src="./icons/next.png">
       <img id="repeat-btn" src="./icons/repeat.png" alt="" srcset="">
-      <img src="./icons/menu.png" alt="menu">
+      <img id="menu-btn" src="./icons/menu.png" alt="menu">
     </div>
     <audio id='player' crossorigin></audio>
   </div>
@@ -76,7 +91,7 @@
     // Parse localStorage into JSON
     let localStorageList = [];
     function parseLocalStorage() {
-      if (localStorage.getItem('songs') == false)
+      if (!localStorage.getItem('songs'))
         localStorage.setItem('songs', '[]');
       else {
         const localstorage = localStorage.getItem('songs');

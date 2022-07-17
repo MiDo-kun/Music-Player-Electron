@@ -1,4 +1,4 @@
-#menu {
+#close {
   position: fixed;
   margin-top: .5rem;
   left: 93%;
@@ -20,8 +20,39 @@
 }
 
 .category span{
-  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
   padding: .3rem;
+  letter-spacing: 1px;
+}
+
+.error-modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: -2rem;
+  opacity: 0;
+  z-index: -1;
+}
+
+.error-modal img {
+  position: absolute;
+  left: 23.5rem;
+  top: 8rem;
+}
+
+#error-message {
+  width: 15.5rem;
+  height: 3.5rem;
+  padding-top: 1rem;
+  color: red;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
 }
 
 .category hr {
@@ -39,7 +70,7 @@
   overflow: hidden;
   margin-top: 1.3rem;
   width: 75%;
-  max-height: 13rem;
+  max-height: 13.8rem;
 }
 
 .results {
@@ -54,20 +85,32 @@
   position: absolute;
   align-items: center;
   justify-content: center;
+  margin-top: -1rem;
   z-index: -1;
 }
 
 .bg-icon #center {
   text-align: center;
-  margin: 0 auto;
 }
 
 .bg-icon img {
   position: relative;
-  margin-top: -3.5rem;
-  border-radius: 3px;
+  max-width: 18rem;
+  max-height: 12rem;
+  border-radius: 2px;
+}
+
+.bg-icon #center > span {
+  max-width: 100%;
+  display: block;
 }
 
 .bg-icon #music_title {
+  display: inline-block;
+  overflow: hidden;
   color: #ffffff;
+  white-space: nowrap;
+  max-width: 30rem;
+  text-align: center;
+  text-overflow: ellipsis;
 }
