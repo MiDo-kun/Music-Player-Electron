@@ -73,6 +73,22 @@
   max-height: 13.8rem;
 }
 
+.empty-local-list {
+  margin-top: 3rem;
+  display: none;
+  text-align: center;
+}
+
+.empty-local-list > p {
+  font-family: 'Rubik', sans-serif;
+  font-size: .8rem;
+}
+
+.empty-local-list > img {
+  margin-right: 3.5rem;
+}
+
+
 .results {
   max-height: 210px ;
   overflow: auto;

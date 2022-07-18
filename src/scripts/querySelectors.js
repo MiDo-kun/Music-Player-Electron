@@ -16,6 +16,7 @@ const slider = document.querySelector('#slider');
 const emptyGIF = document.querySelector('.empty-list');
 const errorModal = document.querySelector('.error-modal');
 const closeErrorModal = document.querySelector('#err-close-modal');
+const localEmptyList = document.querySelector('.empty-local-list');
 
 // Buttons
 const localBtn = document.querySelector('#local_list');

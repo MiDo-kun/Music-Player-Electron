@@ -3,6 +3,14 @@ loadLocal();
 
 function loadLocal() {
   parseLocalStorage()
+
+  // If localStorage is empty
+  if (localStorageList == false) {
+    localEmptyList.style.display = 'block';
+  } else {
+    localEmptyList.style.display = 'none';
+  }
+
   const localResults = document.querySelector('.results');
   let template = '';
   localStorageList.forEach((song) => {
@@ -64,6 +72,7 @@ function removeLocal(songID) {
       localStorageList.splice(index, 1);
       localStorage.setItem('songs', JSON.stringify(localStorageList.reverse()));
       await fetch(`/remove/${song.id}`);
+      parseLocalStorage();
     }
   });
   audio.pause();

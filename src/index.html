@@ -23,24 +23,32 @@
       <span id='local_list'>Local</span> | <span id='yt_list'>Youtube</span>
       <hr>
     </div>
-    <!-- Error handling here -->
+    <!-- Error handling info on YT -->
     <div class="error-modal">
       <div class="error-container">
         <img id="err-close-modal" src="./icons/close-black.png" alt="" width="13" height="13">
         <div id="error-message">No internet connection!</div>
       </div>
     </div>
-    <!-- Music List here -->
+    <!-- Music List -->
     <div class="music-list">
       <div class="center">
-        <!-- local storage here -->
+        <!-- Local Storage List -->
         <div class="local">
-          <div class="center" style="max-height: 220px;">
+          <div class="center">
+            <div class="empty-local-list">
+              <img src="./icons/no_search.gif" alt="" width="80" height="70">
+              <p>
+                Local playlist is empty <br>
+                Search and save some songs...😊
+              </p>
+
+            </div>
             <div class="results">
             </div>
           </div>
         </div>
-        <!-- youtube search here -->
+        <!-- Youtube Search List -->
         <div class="yt">
           <nav>
             <input type="text" name="" id="yt_input" placeholder="Search">
@@ -51,7 +59,7 @@
           <div class="center">
             <div class="empty-list">
               <img src="./icons/no_search.gif" alt="" width="80" height="70">
-              <p>List is empty...</p>
+              <p>List is empty...😊</p>
             </div>
             <div class="youtube_results">
             </div>
@@ -61,12 +69,12 @@
     </div>
   </div>
 
-  <!-- Music played details -->
+  <!-- Music Played Details -->
   <div class="bg-icon show">
     <div id="center">
       <img class="background-music">
       <div>
-        <p width="60%" direction="left" id="music_title"> </p>
+        <p width="60%" direction="left" id="music_title"></p>
       </div>
     </div>
   </div>
@@ -91,8 +99,9 @@
     // Parse localStorage into JSON
     let localStorageList = [];
     function parseLocalStorage() {
-      if (!localStorage.getItem('songs'))
+      if (!localStorage.getItem('songs')) {
         localStorage.setItem('songs', '[]');
+      }
       else {
         const localstorage = localStorage.getItem('songs');
         localStorageList = JSON.parse(localstorage).reverse();
