@@ -24,7 +24,9 @@
 
 ## Installation Guide
 ### Clone Repo
-``` https://github.com/MiDo781/Music-Player_-_Electron.git ``` and go to the directory.
+``` https://github.com/MiDo781/Music-Player_-_Electron.git ``` and go to the directory. <br>
+> Add a folder in  ```src``` named ```music``` to store your saved songs.
+
 > Make sure that you have node installed, LTS updated version is recommended.
 
 ### Install dependencies
