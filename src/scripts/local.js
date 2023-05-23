@@ -44,7 +44,7 @@ function playLocal(songID) {
     if (song.id == searchSong) {
       img.src = song.thumbnail;
       img.style.filter = 'brightness(0.5)';
-      audio.src = `./music/${song.id}.mp3`;
+      audio.src = `.././music/${song.id}.mp3`;
       bgImg.src = song.thumbnail;
       ytIcon.src = song.thumbnail;
       bgTitle.textContent = song.title;
@@ -71,7 +71,7 @@ function removeLocal(songID) {
     if (song.id == songID) {
       localStorageList.splice(index, 1);
       localStorage.setItem('songs', JSON.stringify(localStorageList.reverse()));
-      await fetch(`/remove/${song.id}`);
+      await fetch(`${BACKEND_SERVER}/remove?videoId=${song.id}`);
       parseLocalStorage();
     }
   });

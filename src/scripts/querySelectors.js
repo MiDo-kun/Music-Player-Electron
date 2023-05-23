@@ -35,3 +35,5 @@ let closeMenu = false;
 let repeat = false;
 let randomShuffle = false;
 let showVolume = false;
+
+const BACKEND_SERVER = "http://localhost:8887";

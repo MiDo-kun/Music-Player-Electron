@@ -71,7 +71,7 @@ function nextTrack() {
 
   localStorageList.forEach((song, index) => {
     if (song.id == currentId && index < localStorageList.length - 1) {
-      audio.src = "./music/" +  localStorageList[index + 1].id + ".mp3";
+      audio.src = ".././music/" +  localStorageList[index + 1].id + ".mp3";
       audio.play();
       
       bgTitle.innerHTML = localStorageList[index + 1].title;
@@ -80,7 +80,7 @@ function nextTrack() {
       ytIcon.src = localStorageList[index + 1].thumbnail;  
     } 
     else if (song.id == currentId && index == localStorageList.length - 1) {
-      audio.src = "./music/" +  localStorageList[0].id + ".mp3";
+      audio.src = ".././music/" +  localStorageList[0].id + ".mp3";
       audio.play();
       
       bgTitle.innerHTML = localStorageList[0].title;
@@ -111,7 +111,7 @@ previousBtn.addEventListener('click', () => {
 
   localStorageList.forEach((song, index) => {
     if (song.id == currentId && index > 0) {
-      audio.src = "./music/" +  localStorageList[index - 1].id + ".mp3";
+      audio.src = ".././music/" +  localStorageList[index - 1].id + ".mp3";
       audio.play();
       
       bgTitle.innerHTML = localStorageList[index - 1].title;
@@ -120,7 +120,7 @@ previousBtn.addEventListener('click', () => {
       ytIcon.src = localStorageList[index - 1].thumbnail;
     } 
     else if (song.id == currentId && index == 0) {
-      audio.src = "./music/" +  localStorageList[localStorageList.length - 1].id + ".mp3";
+      audio.src = ".././music/" +  localStorageList[localStorageList.length - 1].id + ".mp3";
       audio.play();
       
       bgTitle.innerHTML = localStorageList[localStorageList.length - 1].title;
@@ -172,7 +172,7 @@ function shuffle() {
   setInterval(progress, 500);
   
   const randomIndex = Math.floor(Math.random() * localStorageList.length);
-  audio.src = "./music/" +  localStorageList[randomIndex].id + ".mp3";
+  audio.src = ".././music/" +  localStorageList[randomIndex].id + ".mp3";
   audio.play();
   
   bgTitle.innerHTML = localStorageList[randomIndex].title;
