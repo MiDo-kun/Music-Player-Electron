@@ -1,7 +1,5 @@
 # Music Player - Electron
 
-## Project Description
-
 The Music Player - Electron is a desktop application built using the Electron framework and Innertube.js library. The application is designed to provide a minimalistic user interface that allows users to play and keep track of their favorite songs from both local and YouTube sources.
 
 The main objective of this project is to provide a seamless music playing experience for users, with a focus on simplicity and ease of use. The application is built using Electron, a JavaScript framework that is used for creating desktop applications. Innertube.js is used to play music from YouTube, while the application's user interface is designed to be minimalistic and intuitive.
